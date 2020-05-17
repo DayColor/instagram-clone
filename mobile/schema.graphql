@@ -1,0 +1,10 @@
+type Photo {
+    id: ID!
+    imageUrl: String!
+    caption: String
+}
+
+type Query {
+    photos: [Photo]
+    photo(id: String): Photo
+}

@@ -14,16 +14,16 @@ alias Instagram.Posts
 mock_photos = 9
 
 photos_list = [
-  "https://freestocks.org/fs/wp-content/uploads/2018/01/english_bulldog_lying_on_a_sofa_2-800x533.jpg",
-  "https://freestocks.org/fs/wp-content/uploads/2017/04/old_tile_stove_fire-800x533.jpg",
-  "https://freestocks.org/fs/wp-content/uploads/2017/10/trip_in_the_mountins_with_a_dog-733x1100.jpg",
-  "https://freestocks.org/fs/wp-content/uploads/2016/08/french_fries-800x533.jpg",
-  "https://freestocks.org/fs/wp-content/uploads/2016/09/memory_box_2-800x533.jpg",
-  "https://freestocks.org/fs/wp-content/uploads/2016/10/sailing_boat_at_sunset-450x300.jpg",
-  "https://freestocks.org/fs/wp-content/uploads/2016/11/playground_ropes-800x533.jpg",
-  "https://freestocks.org/fs/wp-content/uploads/2016/11/fig_cake_2-800x533.jpg",
-  "https://freestocks.org/fs/wp-content/uploads/2017/12/christmas_tree_decoration_3-800x533.jpg",
-  "https://freestocks.org/fs/wp-content/uploads/2016/08/timber-800x533.jpg"
+  "https://picsum.photos/id/0/5616/3744",
+  "https://picsum.photos/id/10/2500/1667",
+  "https://picsum.photos/id/100/2500/1656",
+  "https://picsum.photos/id/1000/5626/3635",
+  "https://picsum.photos/id/1001/5616/3744",
+  "https://picsum.photos/id/1002/4312/2868",
+  "https://picsum.photos/id/1003/1181/1772",
+  "https://picsum.photos/id/1005/5760/3840",
+  "https://picsum.photos/id/1006/3000/2000",
+  "https://picsum.photos/id/1008/5616/3744"
 ]
 
 for index <- 0..mock_photos do

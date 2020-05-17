@@ -1,7 +1,7 @@
-import Entypo from 'react-native-vector-icons/Entypo';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import { ImageSource } from 'react-native-vector-icons/Icon';
 import { Platform, PixelRatio } from 'react-native';
+import Entypo from 'react-native-vector-icons/Entypo';
+import { ImageSource } from 'react-native-vector-icons/Icon';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const navIconSize =
   __DEV__ === false && Platform.OS === 'android'
