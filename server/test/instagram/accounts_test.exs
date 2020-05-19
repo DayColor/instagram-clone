@@ -6,9 +6,30 @@ defmodule Instagram.AccountsTest do
   describe "users" do
     alias Instagram.Accounts.User
 
-    @valid_attrs %{avatar: "some avatar", email: "some email", facebook_id: "some facebook_id", first_name: "some first_name", last_name: "some last_name", username: "some username"}
-    @update_attrs %{avatar: "some updated avatar", email: "some updated email", facebook_id: "some updated facebook_id", first_name: "some updated first_name", last_name: "some updated last_name", username: "some updated username"}
-    @invalid_attrs %{avatar: nil, email: nil, facebook_id: nil, first_name: nil, last_name: nil, username: nil}
+    @valid_attrs %{
+      avatar: "some avatar",
+      email: "some email",
+      facebook_id: "some facebook_id",
+      first_name: "some first_name",
+      last_name: "some last_name",
+      username: "some username"
+    }
+    @update_attrs %{
+      avatar: "some updated avatar",
+      email: "some updated email",
+      facebook_id: "some updated facebook_id",
+      first_name: "some updated first_name",
+      last_name: "some updated last_name",
+      username: "some updated username"
+    }
+    @invalid_attrs %{
+      avatar: nil,
+      email: nil,
+      facebook_id: nil,
+      first_name: nil,
+      last_name: nil,
+      username: nil
+    }
 
     def user_fixture(attrs \\ %{}) do
       {:ok, user} =

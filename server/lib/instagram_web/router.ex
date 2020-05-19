@@ -11,7 +11,9 @@ defmodule InstagramWeb.Router do
     forward "/graphql", Absinthe.Plug, schema: InstagramWeb.Schema
 
     if Mix.env() == :dev do
-      forward "/graphiql", Absinthe.Plug.GraphiQL, schema: InstagramWeb.Schema, interface: :playground
+      forward "/graphiql", Absinthe.Plug.GraphiQL,
+        schema: InstagramWeb.Schema,
+        interface: :playground
     end
   end
 

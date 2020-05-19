@@ -8,6 +8,5 @@ defmodule Instagram.Repo.Migrations.CreatePhotos do
 
       timestamps()
     end
-
   end
 end

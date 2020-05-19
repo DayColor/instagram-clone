@@ -46,14 +46,16 @@ defmodule Instagram.MixProject do
       {:absinthe, "~> 1.4.16"},
       {:absinthe_plug, "~> 1.4.7"},
       {:absinthe_ecto, ">= 0.0.0"},
-      {:faker, "~> 0.13.0", only: [:dev, :test]}
+      {:faker, "~> 0.13.0", only: [:dev, :test]},
+      {:facebook, "~> 0.24.0"},
+      {:guardian, "~> 2.1.1"}
     ]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.
   # For example, to install project dependencies and perform other setup tasks, run:
   #
-  #     $ mix setup
+  #     $ mix setupH
   #
   # See the documentation for `Mix` for more info on aliases.
   defp aliases do
