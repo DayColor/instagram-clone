@@ -1,5 +1,9 @@
 # IDE specific configuration
 .idea
+instagram.iml
+
+# Intellij generates a gradle folder to store dependencies configuration
+.gradle
 
 # The directory Mix will write compiled artifacts to.
 /_build/
