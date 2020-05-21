@@ -1,0 +1,14 @@
+query photos {
+    photos {
+        id
+        imageUrl
+        caption
+    }
+}
+
+
+mutation login($provider: Provider, $token: String) {
+    login(provider: $provider, token: $token) {
+        token
+    }
+}

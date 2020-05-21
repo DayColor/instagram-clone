@@ -132,6 +132,7 @@ android {
         applicationId "com.instagramclone"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
+        multiDexEnabled true
         versionCode 1
         versionName "1.0"
     }
@@ -187,7 +188,15 @@ android {
     }
 }
 
+repositories {
+    mavenCentral()
+}
+
 dependencies {
+    implementation 'com.android.support:multidex:1.0.3'
+
+    implementation "com.facebook.android:facebook-android-sdk:[4,5)"
+
     implementation fileTree(dir: "libs", include: ["*.jar"])
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules

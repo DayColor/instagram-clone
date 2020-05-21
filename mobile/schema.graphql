@@ -1,10 +1,28 @@
+schema {
+    query: Query
+    mutation: Mutation
+}
+
 type Photo {
     id: ID!
     imageUrl: String!
     caption: String
 }
 
+type UserSession {
+    token: String!
+}
+
+enum Provider {
+    FACEBOOK
+}
+
 type Query {
-    photos: [Photo]
+    photos: [Photo!]!
     photo(id: String): Photo
 }
+
+type Mutation {
+    login(provider: Provider, token: String): UserSession
+}
+

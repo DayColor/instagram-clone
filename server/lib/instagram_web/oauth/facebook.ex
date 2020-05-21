@@ -26,9 +26,7 @@ defmodule InstagramWeb.Oauth.Facebook do
       avatar: picture_data["data"]["url"],
       first_name: user["first_name"],
       last_name: user["last_name"],
-      # user["email"]
-      # TODO: Change this back to user["email"]
-      email: "test_email"
+      email: user["email"]
     }
   end
 end

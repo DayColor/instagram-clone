@@ -17,24 +17,25 @@ const icons = <const>{
 
 const iconsMap: Record<keyof typeof icons | string, ImageSource> = {};
 
-const iconsLoaded = new Promise((resolve, reject) => {
-  Promise.all(
-    (Object.keys(icons) as (keyof typeof icons)[]).map((iconName) => {
-      const Provider = icons[iconName][1];
-      return Provider.getImageSource(
-        iconName.replace(replaceSuffixPattern, ''),
-        icons[iconName][0],
-      );
-    }),
-  )
-    .then((sources) => {
-      (Object.keys(icons) as (keyof typeof icons)[]).forEach(
-        (iconName, i) => (iconsMap[iconName] = sources[i]),
-      );
+const iconsLoaded = () =>
+  new Promise((resolve, reject) => {
+    Promise.all(
+      (Object.keys(icons) as (keyof typeof icons)[]).map((iconName) => {
+        const Provider = icons[iconName][1];
+        return Provider.getImageSource(
+          iconName.replace(replaceSuffixPattern, ''),
+          icons[iconName][0],
+        );
+      }),
+    )
+      .then((sources) => {
+        (Object.keys(icons) as (keyof typeof icons)[]).forEach(
+          (iconName, i) => (iconsMap[iconName] = sources[i]),
+        );
 
-      resolve(true);
-    })
-    .catch(reject);
-});
+        resolve(true);
+      })
+      .catch(reject);
+  });
 
 export { iconsMap, iconsLoaded };

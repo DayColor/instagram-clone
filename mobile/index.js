@@ -1,3 +1,3 @@
-import Nav from './src/Nav';
+import { appInitialized } from './src/utils/appInitialized';
 
-const App = new Nav();
+appInitialized();

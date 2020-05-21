@@ -1,6 +1,4 @@
-import gql from 'graphql-tag';
 import React, { Component } from 'react';
-import { graphql, ChildDataProps } from 'react-apollo';
 import {
   ActivityIndicator,
   StyleSheet,
@@ -9,8 +7,8 @@ import {
   ListRenderItemInfo,
   RefreshControl,
 } from 'react-native';
-import { Photo } from 'src/types';
 import { PhotoCard } from '../../components';
+import { Photo, withPhotos, PhotosProps } from '../../graphql-types';
 
 const styles = StyleSheet.create({
   loadingWrapper: {
@@ -20,15 +18,11 @@ const styles = StyleSheet.create({
   },
 });
 
-interface Response {
-  photos: Photo[];
-}
-
 interface State {
   isRefreshing: boolean;
 }
 
-class FeedsScreen extends Component<ChildDataProps<{}, Response>, State> {
+class FeedsScreen extends Component<PhotosProps, State> {
   public state = {
     isRefreshing: false,
   };
@@ -73,16 +67,4 @@ class FeedsScreen extends Component<ChildDataProps<{}, Response>, State> {
   }
 }
 
-const getPhotos = gql`
-  query {
-    photos {
-      id
-      imageUrl
-      caption
-    }
-  }
-`;
-
-export default graphql<{}, Response, {}, ChildDataProps<{}, Response>>(
-  getPhotos,
-)(FeedsScreen);
+export default withPhotos()(FeedsScreen);

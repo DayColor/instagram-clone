@@ -1,0 +1,17 @@
+{
+  "documents": ["operation.graphql"],
+  "schema": ["schema.graphql"],
+  "generates": {
+    "./src/graphql-types.tsx": {
+      "config": {
+        "withComponent": false,
+        "withHOC": true
+      },
+      "plugins": [
+        "typescript",
+        "typescript-operations",
+        "typescript-react-apollo"
+      ]
+    }
+  }
+}

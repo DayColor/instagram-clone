@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Image, TouchableOpacity, Text } from 'react-native';
 import { human, iOSColors } from 'react-native-typography';
-import { Photo } from 'src/types';
+import { Photo } from 'src/graphql-types';
 import ActionBtns from './ActionBtns';
 import Header from './Header';
 import Meta from './Meta';
@@ -51,7 +51,7 @@ class PhotoCard extends Component<Props> {
           }}
         />
         <ActionBtns />
-        <Meta caption={this.props.data.caption} />
+        <Meta caption={this.props.data.caption!} />
         <View style={styles.commentsWrapper}>
           <TouchableOpacity>
             <Text style={styles.commentViewAll}>View all 13 comments</Text>
