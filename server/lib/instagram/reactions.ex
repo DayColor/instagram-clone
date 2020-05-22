@@ -1,12 +1,27 @@
-defmodule Instagram.Reaction do
+defmodule Instagram.Reactions do
   @moduledoc """
-  The Reaction context.
+  The Reactions context.
   """
 
   import Ecto.Query, warn: false
   alias Instagram.Repo
 
-  alias Instagram.Reaction.LikePhoto
+  alias Instagram.Reactions.LikePhoto
+
+  def like_photo(photo_id, user_id) do
+    query = from p in LikePhoto,
+                 where: p.photo_id == ^photo_id and p.user_id == ^user_id
+
+    result = Repo.one(query)
+
+    if result == nil do
+      create_like_photo(%{photo_id: photo_id, user_id: user_id})
+      {:ok, true}
+    else
+      delete_like_photo(result)
+      {:ok, false}
+    end
+  end
 
   @doc """
   Returns the list of like_photos.

@@ -40,11 +40,16 @@ export type QueryPhotoArgs = {
 export type Mutation = {
   __typename?: 'Mutation';
   login?: Maybe<UserSession>;
+  likePhoto?: Maybe<Scalars['Boolean']>;
 };
 
 export type MutationLoginArgs = {
   provider?: Maybe<Provider>;
   token?: Maybe<Scalars['String']>;
+};
+
+export type MutationLikePhotoArgs = {
+  photoId: Scalars['ID'];
 };
 
 export type PhotosQueryVariables = {};
@@ -63,6 +68,15 @@ export type LoginMutationVariables = {
 export type LoginMutation = { __typename?: 'Mutation' } & {
   login?: Maybe<{ __typename?: 'UserSession' } & Pick<UserSession, 'token'>>;
 };
+
+export type LikePhotoMutationVariables = {
+  photoId: Scalars['ID'];
+};
+
+export type LikePhotoMutation = { __typename?: 'Mutation' } & Pick<
+  Mutation,
+  'likePhoto'
+>;
 
 export const PhotosDocument = gql`
   query photos {
@@ -155,4 +169,52 @@ export type LoginMutationResult = ApolloReactCommon.MutationResult<
 export type LoginMutationOptions = ApolloReactCommon.BaseMutationOptions<
   LoginMutation,
   LoginMutationVariables
+>;
+export const LikePhotoDocument = gql`
+  mutation likePhoto($photoId: ID!) {
+    likePhoto(photoId: $photoId)
+  }
+`;
+export type LikePhotoMutationFn = ApolloReactCommon.MutationFunction<
+  LikePhotoMutation,
+  LikePhotoMutationVariables
+>;
+export type LikePhotoProps<
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+> = {
+  [key in TDataName]: ApolloReactCommon.MutationFunction<
+    LikePhotoMutation,
+    LikePhotoMutationVariables
+  >;
+} &
+  TChildProps;
+export function withLikePhoto<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    LikePhotoMutation,
+    LikePhotoMutationVariables,
+    LikePhotoProps<TChildProps, TDataName>
+  >,
+) {
+  return ApolloReactHoc.withMutation<
+    TProps,
+    LikePhotoMutation,
+    LikePhotoMutationVariables,
+    LikePhotoProps<TChildProps, TDataName>
+  >(LikePhotoDocument, {
+    alias: 'likePhoto',
+    ...operationOptions,
+  });
+}
+export type LikePhotoMutationResult = ApolloReactCommon.MutationResult<
+  LikePhotoMutation
+>;
+export type LikePhotoMutationOptions = ApolloReactCommon.BaseMutationOptions<
+  LikePhotoMutation,
+  LikePhotoMutationVariables
 >;

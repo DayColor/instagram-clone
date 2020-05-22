@@ -6,8 +6,8 @@ defmodule InstagramWeb.Schema.Middleware.Authorize do
       resolution
     else
       _ ->
-      resolution
-      |> Absinthe.Resolution.put_result({:error, "Unauthorized"})
+        resolution
+        |> Absinthe.Resolution.put_result({:error, "Unauthorized"})
     end
   end
 end

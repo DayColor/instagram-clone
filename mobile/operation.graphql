@@ -12,3 +12,7 @@ mutation login($provider: Provider, $token: String) {
         token
     }
 }
+
+mutation likePhoto($photoId: ID!) {
+    likePhoto(photoId: $photoId)
+}

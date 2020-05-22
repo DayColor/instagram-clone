@@ -24,5 +24,6 @@ type Query {
 
 type Mutation {
     login(provider: Provider, token: String): UserSession
+    likePhoto(photoId: ID!): Boolean
 }
 

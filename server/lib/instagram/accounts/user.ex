@@ -10,6 +10,8 @@ defmodule Instagram.Accounts.User do
     field :last_name, :string
     field :username, :string
 
+    has_many :like_photos, Instagram.Reactions.LikePhoto
+
     timestamps()
   end
 
